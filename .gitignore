@@ -1,1 +1,4 @@
 test.ipynb
+env/Manifest.toml
+.gitignore
+.vscode/settings.json
