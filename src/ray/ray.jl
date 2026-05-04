@@ -39,7 +39,7 @@ end
 
 # Time based on vertial phase velocity?
 function stop_time(profile, u₀)
-    return (top(profile) - bottom(profile)) / ∂Ω∂m(profile, u₀...)
+    return (top(profile) - bottom(profile)) / abs(∂Ω∂m(profile, u₀...))
 end
 
 # Stop if ray leaves domain
