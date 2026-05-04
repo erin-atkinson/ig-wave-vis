@@ -35,13 +35,13 @@ function ∂Ω∂x(profile::AbstractProfile{F}, x, z, k, m) where F
 end
 
 function ∂Ω∂k(profile::AbstractProfile, _, z, k, m)
-    return sign(k) * frequency(profile, z) * m^2 / sqrt(k^2 + m^2) / (k^2 + m^2)
+    return frequency(profile, z) * m^2 / sqrt(k^2 + m^2) / (k^2 + m^2)
 end
 
 function ∂Ω∂m(profile::AbstractProfile, _, z, k, m)
-    return -m * abs(k) * frequency(profile, z) / sqrt(k^2 + m^2) / (k^2 + m^2)
+    return -m * k * frequency(profile, z) / sqrt(k^2 + m^2) / (k^2 + m^2)
 end
 
 function ∂Ω∂z(profile::AbstractProfile, _, z, k, m)
-    return abs(k) * frequency_squared_dz(profile, z) / sqrt(k^2 + m^2) / 2frequency(profile, z)
+    return k * frequency_squared_dz(profile, z) / sqrt(k^2 + m^2) / 2frequency(profile, z)
 end
