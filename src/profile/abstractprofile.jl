@@ -43,5 +43,5 @@ function ∂Ω∂m(profile::AbstractProfile, _, z, k, m)
 end
 
 function ∂Ω∂z(profile::AbstractProfile, _, z, k, m)
-    return abs(k) * frequency_squared_dz(profile, z) / sqrt(k^2 + m^2) / frequency(profile, z)
+    return abs(k) * frequency_squared_dz(profile, z) / sqrt(k^2 + m^2) / 2frequency(profile, z)
 end
