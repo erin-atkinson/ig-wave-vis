@@ -4,6 +4,7 @@ include("initialisation.jl")
 # Create figure layout
 fig = Figure(;
     fontsize = 18,
+    size = (1200, 1000)
 )
 
 # Internal layouts
@@ -14,9 +15,17 @@ slider_gl = GridLayout(fig[3:4, 6:7])
 info_gl = GridLayout(fig[5, 5:7])
 button_gl = GridLayout(fig[6, 5:7])
 
-# Setup sliders
+# Setup sliders and buttons
 include("sliders.jl")
+include("buttons.jl")
 
 # Setup profile selection
 include("profiles.jl")
+
+# Setup window
+include("window.jl")
+
+# Setup ray
+include("ray.jl")
+
 fig

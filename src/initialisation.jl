@@ -1,11 +1,16 @@
 # Create the profiles
 include("profile/profile.jl")
+include("ray/ray.jl")
 
 # Geometry
 H = 1000.0
 L = 1000.0
 N² = 1e-4
 Δb = N² * H / 100
+
+# Nodes for plotting profiles
+profile_xs = range(-L/2, L/2, 128)
+profile_zs = range(-H, 0, 128)
 
 profile_names = [
     "Linear",
@@ -18,6 +23,6 @@ profile_descriptions = [
 ]
 
 profiles = [
-    LinearProfile(H, f),
+    LinearProfile(H, N²),
     PycnoclineProfile(0.2H, H, N², 10N², N², 0.03H)
 ]

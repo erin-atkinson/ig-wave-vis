@@ -26,7 +26,6 @@ on(profile_menu.selection) do s
 end
 notify(profile_menu.selection)
 
-profile_zs = range(-H, 0, 128)
 profile_bs = @lift [buoyancy($profile, z) for z in profile_zs]
 profile_Ns = @lift [frequency($profile, z) for z in profile_zs]
 
