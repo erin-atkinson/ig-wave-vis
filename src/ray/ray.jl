@@ -57,3 +57,22 @@ function ray_step_func!(du, u, profile::AbstractProfile)
 
     return nothing
 end
+
+for ξ in (:x, :z, :k, :m)
+    ∂Ω∂ξ = Symbol(:∂Ω∂, ξ)
+    @eval begin
+
+        function $∂Ω∂ξ(ray::AbstractRay)
+            map(ray.x, ray.z, ray.k, ray.m) do x, z, k, m
+                $∂Ω∂ξ(ray.profile, x, z, k, m)
+            end
+        end
+
+    end
+end
+
+function angle(ray::AbstractRay)
+    map(ray.k, ray.m) do k, m
+        atan(k, m)
+    end
+end
