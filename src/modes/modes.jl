@@ -55,8 +55,8 @@ function mode_transform(modes::Modes{F}, arr) where F
     ψ_xfft = fft(arr, 1)
     mode_amplitudes = zeros(complex(F), modes.Nx, modes.Nz)
 
-    for i in 1:modes.Nx, n in 1:modes.Nz
-        mode_amplitudes[i, n] = sum(ψ_xfft[i, :] .* modes.vectors[i, :, n])
+    for i in 1:modes.Nx
+        mode_amplitudes[i, :] .= transpose(modes.vectors[i, :, :]) * ψ_xfft[i, :]
     end
 
     return mode_amplitudes
@@ -65,8 +65,8 @@ end
 function inv_mode_transform(modes::Modes{F}, arr) where F
     ψ_xfft = zeros(complex(F), modes.Nx, modes.Nz)
 
-    for i in 1:modes.Nx, n in 1:modes.Nz
-        ψ_xfft[i, :] .+= arr[i, n] * modes.vectors[i, :, n]
+    for i in 1:modes.Nx
+        ψ_xfft[i, :] .=  modes.vectors[i, :, :] * arr[i, :]
     end
 
     return ifft(ψ_xfft, 1)
