@@ -94,7 +94,7 @@ k = 2π / λ * sin(θ)
 m = 2π / λ * cos(θ)
 z = -500.0
 δ = 50.0
-N = 600
+N = 1200
 ts = range(0, T, N)
 
 n = Observable(1)
@@ -142,7 +142,7 @@ if image_only
     save(filename, fig; px_per_unit=2)
 else
     println("Recording...")
-    prettyrecord(n, fig, filename, 1:N; px_per_unit=2, framerate=24)
+    prettyrecord(n, fig, filename, 1:N; px_per_unit=2, framerate=12)
 end
 
 fig
