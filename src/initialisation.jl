@@ -14,15 +14,18 @@ profile_zs = range(-H, 0, 128)
 
 profile_names = [
     "Linear",
+    "Quadratic",
     "Step",
 ]
 
 profile_descriptions = [
     "Simple constant stratification profile",
+    "Increasing stratification with depth",
     "Step change in buoyancy"
 ]
 
 profiles = [
     LinearProfile(H, N²),
-    PycnoclineProfile(0.2H, H, N², 10N², N², 0.03H)
+    QuadraticProfile(H, N², 3N²),
+    PycnoclineProfile(0.2H, H, N², 9N², N², 0.1H)
 ]

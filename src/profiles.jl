@@ -2,7 +2,7 @@
 Label(profile_gl[1, 1], "Select profile: ")
 
 profile_menu = Menu(profile_gl[1, 2];
-    options = zip(profile_names, 1:2),
+    options = zip(profile_names, 1:length(profile_names)),
 )
 
 profile = Observable{AbstractProfile}(profiles[1])
