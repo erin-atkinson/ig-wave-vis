@@ -83,7 +83,7 @@ on(trace_ray.clicks) do n
 end
 
 colormap = map(to_colormap(:rainbow)) do rgb
-    RGBA(rgb, 0.4)
+    RGBA(rgb, 0.1)
 end
 
 scatter!(ax_window, x₀, z₀; color=:green)
