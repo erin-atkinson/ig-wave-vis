@@ -12,6 +12,7 @@ Label(slider_gl[5, 1], L"z_0 =")
 x₀ = 0.0
 λ₀ = slider_λ.value
 θ₀ = slider_θ.value
+Δθ₀ = 0.1
 z₀ = slider_z.value
 
 K₀ = @lift 2π / $λ₀

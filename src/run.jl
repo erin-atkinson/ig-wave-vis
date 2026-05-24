@@ -1,5 +1,6 @@
 # Run initialisation
 using GLMakie
+using GLMakie.Colors
 using Printf
 using DifferentialEquations
 
