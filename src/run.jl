@@ -1,4 +1,8 @@
 # Run initialisation
+using GLMakie
+using Printf
+using DifferentialEquations
+
 include("initialisation.jl")
 
 # Create figure layout
