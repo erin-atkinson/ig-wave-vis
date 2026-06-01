@@ -3,4 +3,3 @@ env/Manifest.toml
 .gitignore
 .vscode/settings.json
 *.mp4
-*.png
