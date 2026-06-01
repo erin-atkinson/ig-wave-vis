@@ -27,7 +27,7 @@ function Ray(profile::AbstractProfile, x₀::Number, z₀::Number, K₀::Number,
     step_func!(du, u, p, t) = ray_step_func!(du, u, profile)
 
     prob = ODEProblem(step_func!, u₀, tspan)
-    sol = solve(prob; callback=cb)
+    sol = solve(prob; callback=cb, saveat=stop_time(profile, u₀)/30)
 
     x = [u[1] for u in sol.u]
     z = [u[2] for u in sol.u]
@@ -39,7 +39,7 @@ end
 
 # Time based on vertial phase velocity?
 function stop_time(profile, u₀)
-    return (top(profile) - bottom(profile)) / abs(∂Ω∂m(profile, u₀...))
+    return 2 * (top(profile) - bottom(profile)) / abs(∂Ω∂m(profile, u₀...))
 end
 
 # Stop if ray leaves domain
