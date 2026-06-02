@@ -7,7 +7,7 @@ Ray solutions to
 \nabla^2 \frac{\partial^2 \phi}{\partial t^2} + N^2(z)\frac{\partial^2 \phi}{\partial x^2} = 0
 ```
 
-In this folder, do `julia --project="env"` then `include("src/run.jl")` to open the following GLMakie window:
+In a console at `ig-wave-vis`, do `julia --project="env"`, install packages with `using Pkg; Pkg.instantiate()` then `include("src/run.jl")` to open the following GLMakie window:
 
 ![](example.png)
 
