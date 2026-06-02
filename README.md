@@ -3,9 +3,9 @@
 Exercise for the CREATE QCS training module Perturbation Theory in Fluid Mechanics.
 
 Ray solutions to 
-$$
+```math
 \nabla^2 \frac{\partial^2 \phi}{\partial t^2} + N^2(z)\frac{\partial^2 \phi}{\partial x^2} = 0
-$$
+```
 
 In this folder, do `julia --project="env"` then `include("src/run.jl")` to open the following GLMakie window:
 
