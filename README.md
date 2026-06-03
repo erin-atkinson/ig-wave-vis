@@ -11,7 +11,7 @@ In a console at `ig-wave-vis`, do `julia --project="env"`, install packages with
 
 ![](example.png)
 
-The background buoyancy $b = \int N\text{d}z$ is shown as a contour plot. The profile can be chosen with the drop-down menu.
+The background buoyancy $b = \int N^2\text{d}z$ is shown as a contour plot. The profile can be chosen with the drop-down menu.
 
 The initial wavevector and phase velocity direction is blue, and the group velocity is green. The initial conditions (wavelength, angle and depth) can be controlled with the sliders on the right side. The critical layer (where $N^2 = \omega^2$) is shown as a magenta contour.
 
